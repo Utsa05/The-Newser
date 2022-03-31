@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:newser/presentation/pages/home_page/home_page.dart';
+import 'package:newser/presentation/pages/bottom_nav_page/bottom_nav_page.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -14,11 +14,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'The Newser',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const BottomNavPage(),
     );
   }
 }

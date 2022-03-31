@@ -7,26 +7,30 @@ class CategoryListComp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: SizedBox(
-        width: double.infinity,
-        height: 60.0,
+    List categoryList = ["All", "Popular", "Best", "World", "Views"];
+    return Container(
+      margin: const EdgeInsets.only(top: 10.0),
+      height: 40.0,
+      width: double.infinity,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
         child: Row(
             children: List.generate(
-                5,
-                (index) => InkWell(
-                      onTap: () {},
-                      child: Ink(
-                        height: 60.0,
-                        child: Container(
-                          child: const TextWidget(
-                            title: 'Popplar',
-                            color: AppColor.whiteColor,
-                            weight: FontWeight.bold,
-                          ),
-                          decoration: BoxDecoration(
-                              color: AppColor.primarColor,
-                              borderRadius: BorderRadius.circular(14.0)),
+                categoryList.length,
+                (index) => Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15.0)),
+                      padding: const EdgeInsets.only(left: 7.0, right: 7.0),
+                      child: MaterialButton(
+                        elevation: 0.0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0)),
+                        color: AppColor.primarColor,
+                        onPressed: () {},
+                        child: TextWidget(
+                          weight: FontWeight.bold,
+                          color: AppColor.whiteColor,
+                          title: categoryList[index],
                         ),
                       ),
                     ))),
